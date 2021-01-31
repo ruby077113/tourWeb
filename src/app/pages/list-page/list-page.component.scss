@@ -1,0 +1,10 @@
+@import "../../scss/_style";
+.style-warp {
+    .card-content-warp {
+        width: 100%;
+        min-width: 1080px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 12px 0;
+    }
+}

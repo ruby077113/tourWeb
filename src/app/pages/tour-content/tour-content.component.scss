@@ -1,0 +1,42 @@
+@import "../../scss/_style";
+.attraction {
+    padding: 16px 0;
+    .atrc__title {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: $heavy-font-color;
+        margin-bottom: 12px;
+    }
+    .atrc__header {
+        display: flex;
+        padding-bottom: 12px;
+        > div {
+            flex: 0 0 50%;
+        }
+        .header__item {
+            color: $light-font-color;
+            padding: 4px 0;
+            display: flex;
+            > div {
+                flex: 0 0 80px;
+            }
+            > span {
+                color: $font-color;
+                padding: 0 4px;
+            }
+        }
+        .header__left {
+        }
+        .header__right {
+            padding: 0 16px;
+        }
+    }
+    .atrc__body {
+        margin: 12px 0;
+        .body__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $heavy-font-color;
+        }
+    }
+}

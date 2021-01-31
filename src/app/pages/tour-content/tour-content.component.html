@@ -1,0 +1,45 @@
+<div class="attraction container">
+    <div class="atrc__title">{{ artcInfo.name }}</div>
+    <div class="atrc__header">
+        <div class="header__left">
+            <img src="{{ artcInfo.images[0].src }}" alt="" />
+        </div>
+        <div class="header__right">
+            <div class="header__item">
+                <div>推薦月份 :</div>
+                <span>{{ artcInfo.month }}</span>
+            </div>
+            <div class="header__item">
+                <div>所在區域 :</div>
+                <span>{{ artcInfo.distric }}</span>
+            </div>
+            <div class="header__item">
+                <div>開放時間 :</div>
+                <span>{{ artcInfo.open_time }}</span>
+            </div>
+            <div class="header__item">
+                <div>活動地點 :</div>
+                <span>{{ artcInfo.address }}</span>
+            </div>
+            <div class="header__item">
+                <div>園區票價 :</div>
+                <span>{{ artcInfo.ticket || '無' }}</span>
+            </div>
+            <div class="header__item">
+                <div>活動網址 :</div>
+                <span>{{ artcInfo.url }}</span>
+            </div>
+            <div class="header__item">
+                <div>細心提醒 :</div>
+                <span>{{ artcInfo.remind }}</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="atrc__body">
+        <div class="body__title">詳細介紹</div>
+        <p>
+            {{ artcInfo.introduction }}
+        </p>
+    </div>
+</div>

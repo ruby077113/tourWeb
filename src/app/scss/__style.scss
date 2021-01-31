@@ -1,0 +1,100 @@
+$primary: #22acb6;
+$primary-hover: #20949c;
+$secondary: #72bd6e;
+$danger: #e96d6d;
+$danger-hover: #cf6060;
+$yellow: #b7c727;
+$linear-primary: linear-gradient(to right, #22acb6, #2bd9e6);
+
+$disabled: #aaa;
+$hover-grey: #f1f1f1;
+$bg-color: #f8f8f8;
+$border-color: #d1d1d1;
+
+// font style
+$fontSize: 14px;
+$font-color: #666;
+$heavy-font-color: #333;
+$light-font-color: #768998;
+
+//global
+$container-size: 1000px;
+
+.text-primary {
+    color: $primary;
+}
+.text-secondary {
+    color: $secondary;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin iconBtn {
+    cursor: pointer;
+    border: none;
+    @include flex-center;
+    border-radius: 50%;
+    margin: 0 4px;
+    transition: 0.3s;
+}
+// svg
+
+.icon-24 {
+    width: 24px;
+    height: 24px;
+    @include iconBtn;
+    img {
+        width: 18px;
+        height: 18px;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    &.hover:hover {
+        background-color: $hover-grey;
+    }
+}
+.icon-36 {
+    width: 36px;
+    height: 36px;
+    @include iconBtn;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover {
+        background-color: $hover-grey;
+    }
+    &.svg-l {
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+.fill-primary {
+    fill: $primary;
+}
+.fill-danger {
+    fill: $danger;
+}
+.fill-greyHover {
+    fill: $light-font-color;
+    &:hover {
+        fill: $heavy-font-color;
+    }
+}
