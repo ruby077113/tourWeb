@@ -9,6 +9,7 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 })
 export class CardComponent implements OnInit {
     @Input() info: attraction;
+    @Input() type: boolean;
     faTag = faTag;
     tags;
     constructor() {}
