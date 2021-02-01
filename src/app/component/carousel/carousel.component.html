@@ -1,0 +1,25 @@
+<div class="carousel">
+    <div class="slider" #carouselSlider [style]="{ height: height + 'px' }">
+        <div class="slider__btn left" (click)="clickHandler(index - 1)">
+            <fa-icon [icon]="faChevronLeft" size="2x" [styles]="{ color: 'white' }"></fa-icon>
+        </div>
+        <div class="slider__btn right" (click)="clickHandler(index + 1)">
+            <fa-icon [icon]="faChevronRight" size="2x" [styles]="{ color: 'white' }"></fa-icon>
+        </div>
+        <ul [style]="{ width: sliderUlWidth, left: position_left + 'px' }">
+            <li *ngFor="let slider of sliders">
+                <a routerLink="/tour/{{ slider.id }}">
+                    <img src="{{ slider.image.src }}" alt="" />
+                    <div class="slider-info">
+                        <div>
+                            {{ slider.distric }}
+                        </div>
+                        <div class="name">
+                            {{ slider.name }}
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
