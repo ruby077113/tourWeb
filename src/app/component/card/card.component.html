@@ -7,8 +7,11 @@
                 <div class="card__text">{{ info.distric }}</div>
                 <div class="card__title">{{ info.name }}</div>
                 <div class="card__text">{{ info.address }}</div>
-                <div class="card__text">
-                    <fa-icon [icon]="faTag"></fa-icon>
+                <div class="card__text icon">
+                    <!-- <fa-icon [icon]="faTag"></fa-icon> -->
+                    <span class="icon-24">
+                        <img class="" src="../../../assets/images/icons/tag-24px.svg" alt="">
+                    </span>
                     <span class="" *ngFor="let tag of tags">
                         {{ tag.name }}
                     </span>

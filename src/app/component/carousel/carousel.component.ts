@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { ElementRef, ViewChild } from '@angular/core';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+// import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { HostListener } from '@angular/core';
 
 import { TourServiceService } from '../../service/tour-service.service';
@@ -13,8 +13,8 @@ import { TourServiceService } from '../../service/tour-service.service';
 export class CarouselComponent implements OnInit, AfterViewInit {
     @ViewChild('carouselSlider') slider: ElementRef;
     @Input() length: number;
-    faChevronRight = faChevronRight;
-    faChevronLeft = faChevronLeft;
+    // faChevronRight = faChevronRight;
+    // faChevronLeft = faChevronLeft;
     index = 0;
     height = 540;
     count: number;

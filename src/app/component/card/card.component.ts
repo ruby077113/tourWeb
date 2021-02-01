@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { attraction } from '../../interface/attraction';
 
-import { faTag } from '@fortawesome/free-solid-svg-icons';
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
@@ -10,11 +9,12 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 export class CardComponent implements OnInit {
     @Input() info: attraction;
     @Input() type: boolean;
-    faTag = faTag;
+    // faTag = faTag;
     tags;
     constructor() {}
 
     ngOnInit(): void {
+        console.log("type",this.type);
         this.tags = this.info.target.length !== 0 ? this.info.target : this.info.category;
     }
 }

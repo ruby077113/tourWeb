@@ -15,12 +15,15 @@
     .card__body {
         padding: 8px 16px;
     }
-    img {
-        transition: 0.3s;
-        width: 100%;
-        object-fit: cover;
-        height: 170px;
+    .img-frame {
+        img {
+            transition: 0.3s;
+            width: 100%;
+            object-fit: cover;
+            height: 170px;
+        }
     }
+
     .card__title {
         height: 38px;
         padding: 0;
@@ -34,13 +37,19 @@
     .card__text {
         color: $light-font-color;
         font-size: 0.938rem;
-        line-height: 1.35;
+        line-height: 24px;
         letter-spacing: 0;
         padding: 0.125rem 0;
+        &.icon{
+            display: flex;
+            align-items: center;
+        }
+        >span{
+            margin-right: 8px;
+        }
     }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
-
 }
 @media screen and (max-width: 767px) {
     .card {
