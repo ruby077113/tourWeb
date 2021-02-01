@@ -53,18 +53,8 @@ $container-size: 1000px;
 .icon-24 {
     width: 24px;
     height: 24px;
-    @include iconBtn;
-    img {
-        width: 18px;
-        height: 18px;
-    }
-    svg {
-        width: 20px;
-        height: 20px;
-    }
-    &.hover:hover {
-        background-color: $hover-grey;
-    }
+    display: inline-block;
+    margin-right: 4px;
 }
 .icon-36 {
     width: 36px;
