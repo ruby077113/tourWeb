@@ -2,9 +2,37 @@
 .style-warp {
     .card-content-warp {
         width: 100%;
-        min-width: 1080px;
+        max-width: 1080px;
         display: flex;
         flex-wrap: wrap;
         padding: 12px 0;
+    }
+    .cards {
+        padding: 10px;
+        flex: 0 0 340px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1080px) {
+    .style-warp {
+        .card-content-warp {
+            width: auto;
+            padding: 0 16px;
+            justify-content: center;
+            .cards {
+                min-width: 340px;
+                flex: 0 0 45%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .style-warp {
+        .card-content-warp {
+            display: block;
+            .cards {
+                padding: 0 16px;
+                flex: 0 0 100%;
+            }
+        }
     }
 }

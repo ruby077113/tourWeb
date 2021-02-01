@@ -1,0 +1,13 @@
+@import "../../scss/_style";
+.navBar {
+    @include flex-center;
+    justify-content: flex-start;
+    min-height: 64px;
+    background-color: $primary;
+    color:#fff;
+    padding: 8px 16px;
+    .navBar__title{
+        font-size: 24px;
+
+    }
+}
