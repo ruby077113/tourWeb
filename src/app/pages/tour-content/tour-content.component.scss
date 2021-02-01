@@ -1,11 +1,11 @@
 @import "../../scss/_style";
 .attraction {
-    padding: 16px 0;
+    padding: 16px;
     .atrc__title {
         font-size: 1.75rem;
         font-weight: bold;
         color: $heavy-font-color;
-        margin-bottom: 12px;
+        margin: 12px 0;
     }
     .atrc__header {
         display: flex;
@@ -29,6 +29,7 @@
         }
         .header__right {
             padding: 0 16px;
+            flex: 1 1 50%;
         }
     }
     .atrc__body {
@@ -37,6 +38,22 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: $heavy-font-color;
+        }
+        .body__content {
+            white-space: pre-wrap;
+            font-size: 1.2rem;
+        }
+    }
+}
+@media screen and (max-width: 1080px) {
+    .attraction {
+        width: 80%;
+        .atrc__header {
+            display: block;
+            .header__right {
+                padding: 0;
+                margin-top: 12px;
+            }
         }
     }
 }
