@@ -14,7 +14,6 @@ export class CardComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        console.log("type",this.type);
         this.tags = this.info.target.length !== 0 ? this.info.target : this.info.category;
     }
 }
