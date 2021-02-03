@@ -11,7 +11,6 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { TourContentComponent } from './pages/tour-content/tour-content.component';
 import { CardComponent } from './component/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CarouselSmComponent } from './component/carousel-sm/carousel-sm.component';
 import { IndexNavComponent } from './component/index-nav/index-nav.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 
@@ -21,7 +20,6 @@ import { CarouselComponent } from './component/carousel/carousel.component';
         ListPageComponent,
         TourContentComponent,
         CardComponent,
-        CarouselSmComponent,
         IndexNavComponent,
         CarouselComponent,
     ],

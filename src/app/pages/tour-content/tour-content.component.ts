@@ -20,6 +20,8 @@ export class TourContentComponent implements OnInit {
     ngOnInit(): void {
         const id = +this.route.snapshot.paramMap.get('id');
         this.artcInfo = this.tourServiceService.getAttractionsDetails(id);
+        history.replaceState({ page: 'tour' }, '', '/' + id);
+
         if (!this.artcInfo) {
             this.router.navigateByUrl('/');
         }

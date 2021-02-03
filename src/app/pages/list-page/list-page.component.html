@@ -1,6 +1,6 @@
 <div class="style-warp container">
-    <app-carousel [length]="5"></app-carousel>
+    <app-carousel [length]="5" [link]="true"></app-carousel>
     <div class="card-content-warp">
-        <app-card class="cards" *ngFor="let attraction of attractionList" [info]="attraction" ></app-card>
+        <app-card class="cards" *ngFor="let attraction of attractionList" [info]="attraction"></app-card>
     </div>
 </div>

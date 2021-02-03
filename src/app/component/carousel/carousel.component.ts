@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { ElementRef, ViewChild } from '@angular/core';
 // import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { HostListener } from '@angular/core';
@@ -13,10 +13,13 @@ import { TourServiceService } from '../../service/tour-service.service';
 export class CarouselComponent implements OnInit, AfterViewInit {
     @ViewChild('carouselSlider') slider: ElementRef;
     @Input() length: number;
+    @Input() link: boolean;
+    @Input() data;
     // faChevronRight = faChevronRight;
     // faChevronLeft = faChevronLeft;
     index = 0;
-    height = 540;
+    li_height = 540;
+    width = 1080;
     count: number;
     maxLength: number;
     sliderUlWidth: number;
@@ -26,25 +29,30 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     constructor(private tourServiceService: TourServiceService) {}
     ngOnInit(): void {
         console.log('slider', this.length);
-        this.maxLength = this.length;
-        this.sliderUlWidth = this.maxLength * 1080;
-        this.sliders = this.tourServiceService.getCarouselData(this.maxLength);
-        console.log('this', this.sliders);
+        if (this.data) {
+            this.maxLength = this.data.length;
+            this.sliders = this.data;
+        } else {
+            this.maxLength = this.length;
+            this.sliders = this.tourServiceService.getCarouselData(this.maxLength);
+        }
+        this.sliderUlWidth = this.maxLength * this.width;
     }
     ngAfterViewInit() {
         this.carousel = this.slider.nativeElement;
-        console.log('video', this.carousel.offsetWidth);
+    }
+    ngAfterViewChecked() {
+        this.li_height = this.carousel.offsetWidth / 2 > 540 ? 540 : this.carousel.offsetWidth / 2;
     }
 
     @HostListener('window:resize', ['$event'])
     windowResize($event): void {
-        const width = $event.target.innerWidth;
-        this.carousel.innerHeight = width / 2;
-        console.log('resize', $event.target);
+        this.width = this.carousel.offsetWidth;
+        this.carousel.style.height = this.width / 2 > 540 ? '540px' : this.width / 2;
+        this.li_height = this.width / 2;
+        this.position_left = -this.width * this.index;
     }
     clickHandler(shift) {
-        console.log(this.position_left, shift, this.index, this.length);
-
         if (shift < 0) {
             this.index = 0;
             return;
@@ -53,7 +61,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
             return;
         }
         this.index = shift;
-        this.position_left = -1080 * this.index;
+        this.position_left = -this.width * this.index;
         console.log(2, this.position_left, shift, this.index, this.length);
     }
 }
